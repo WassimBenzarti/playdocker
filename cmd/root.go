@@ -12,7 +12,7 @@ var rootCmd = &cobra.Command{
     Short: "Launch a PWD session",
     Long: `Launch a session`,
     Run: func(cmd *cobra.Command, args []string) {
-      fmt.Println("Hugo running")
+      
     },
 }
 
