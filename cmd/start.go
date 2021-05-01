@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
+	"github.com/wassimbenzarti/pwd-go/lib"
 	"github.com/wassimbenzarti/pwd-go/lib/session_service"
 )
 
@@ -23,7 +24,8 @@ var StartCmd = &cobra.Command{
 		}
 
 		sshHost := sessionService.GetSSHHost()
-		fmt.Printf(`You can connect to play with docker using this command:
-	ssh %s`, sshHost)
+		fmt.Printf("You can connect to play with docker using this command:\n\tssh %s\n", sshHost)
+
+		lib.LaunchSSHTunnel(sshHost)
 	},
 }

@@ -59,7 +59,7 @@ func (service SessionService) GetConfigPath() string {
 func (service SessionService) GetSSHHost() string {
 	sessionId := api.CreateSession(service.cache.Cookie)
 	instance := api.CreateInstance(sessionId)
-	return fmt.Sprintf("%s/p/%s", configs.API_URL, instance.ProxyHost)
+	return fmt.Sprintf(configs.SSH_URI, instance.ProxyHost)
 }
 
 func (service SessionService) HasCredentials() bool {
