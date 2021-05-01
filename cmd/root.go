@@ -8,15 +8,12 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-    Use:   "new",
-    Short: "Launch a PWD session",
-    Long: `Launch a session`,
-    Run: func(cmd *cobra.Command, args []string) {
-      
-    },
+    Use:   "",
 }
 
 func Execute() {
+	rootCmd.AddCommand(StartCmd)
+	rootCmd.AddCommand(SetCookieCmd)
     if err := rootCmd.Execute(); err != nil {
         fmt.Fprintln(os.Stderr, err)
         os.Exit(1)

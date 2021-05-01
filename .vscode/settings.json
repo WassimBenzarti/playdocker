@@ -4,4 +4,7 @@
         "editor.defaultFormatter": "golang.go"
     },
     "editor.insertSpaces": true,
+    "explorer.openEditors.visible": 4,
+    "editor.fontFamily": "'Cascadia Mono', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 15,
 }

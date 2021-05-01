@@ -17,17 +17,18 @@ func CreateSession(cookie string) string {
     request, err := http.NewRequest("POST", configs.API_URL, nil)
     if err !=nil {
         log.Printf("Couldn't create the request %v", err)
+		return ""
     }
     request.Header.Add("cookie", cookie)
 
     response, err := http.DefaultClient.Do(request)
     if err != nil{
         log.Printf("Cannot request the API %v", err)
+		return ""
     }
 
     url := strings.Split(response.Request.URL.String(),"/")
     id := url[len(url)-1]
-    fmt.Printf("id: %s", id)
 
     return id
 }
