@@ -3,20 +3,21 @@ package storage
 import (
 	"encoding/json"
 	"os"
+	"path"
 )
 
 type Storage struct {
 	Path string
 }
 
-func New(parentFolder string, path string) (*Storage, error) {
+func New(parentFolder string, filePath string) (*Storage, error) {
 	// Create the parent folders
 	err := os.MkdirAll(parentFolder, os.ModePerm)
 	if err != nil {
 		return nil, err
 	}
 
-	return &Storage{parentFolder + path}, nil
+	return &Storage{path.Join(parentFolder, filePath)}, nil
 }
 
 func (storage *Storage) Save(object interface{}) error {

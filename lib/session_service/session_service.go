@@ -3,6 +3,7 @@ package session_service
 import (
 	"fmt"
 	"os"
+	"path"
 
 	"github.com/wassimbenzarti/pwd-go/api"
 	"github.com/wassimbenzarti/pwd-go/configs"
@@ -23,13 +24,13 @@ func New() (*SessionService, error) {
 	if err != nil {
 		panic(err)
 	}
-	parentFolder := home + "/.pwd-go"
+	parentFolder := path.Join(home, "/.pwd-go")
 	if err != nil {
 		return nil, err
 	}
 
 	// Instantiate storage
-	storage, err := storage.New(parentFolder, "/config")
+	storage, err := storage.New(parentFolder, "config")
 	if err != nil {
 		return nil, err
 	}
