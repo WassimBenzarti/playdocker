@@ -1,4 +1,4 @@
-tag=0.0.1
+tag=0.0.3
 
 run:
 	go run main.go
@@ -7,9 +7,6 @@ test:
 	go test ./...
 
 build:
-	mkdir build
-	rm -Rf build/*
-
 	bash scripts/build.sh playdocker
 
 

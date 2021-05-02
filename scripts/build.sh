@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+mkdir build
+rm -Rf build/*
+
 prefix=build
 package=$1
 if [[ -z "$package" ]]; then
